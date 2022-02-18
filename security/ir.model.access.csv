@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+lapeliculera_genero_jefe,Genero Jefe,model_lapeliculera_genero,lapeliculera_jefe,1,1,1,1
+lapeliculera_pelicula_jefe,Pelicula Jefe,model_lapeliculera_pelicula,lapeliculera_jefe,1,1,1,1
+lapeliculera_genero_becario,Genero Becario,model_lapeliculera_genero,lapeliculera_becario,1,0,0,0
+lapeliculera_pelicula_becario,Pelicula Becario,model_lapeliculera_pelicula,lapeliculera_becario,1,0,0,0
