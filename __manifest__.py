@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "lapeliculera",
+    'name': "FCT Manager",
 
     'summary': """
-        Películas que dejan huella""",
+        Gestión fct""",
 
     'description': """
-        Módulo para la organización de películas por género cinematográfico
+        Módulo para la organización de la integración del alumnado en las empresas
     """,
 
-    'author': "jjgl",
-    'website': "http://www.iesbarajas.es",
+    'author': "levi",
+    'website': "http://www.iesmurgi.org/",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/13.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -26,6 +26,7 @@
         'security/security.xml',
         'security/ir.model.access.csv',
         'views/views.xml',
+        'views/menu.xml',
         'views/templates.xml',
         'reports/informe_pelicula.xml'
     ],

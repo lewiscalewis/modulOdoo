@@ -17,6 +17,17 @@ class fctie_alumno(models.Model):
     notatxt =  fields.Char(string="Nota en formato texto", compute="_nota")
     empresa = fields.Many2one("fcties.empresa", string="Empresa", required=True)
 
+    @api.depends('nota','notatxt')
+    def _curso(self):
+        for r.nota in self:
+            if r.nota >= 5 and r.nota < 7:
+                r.notatxt = "Aprobado"
+            elseif r.nota >= 7 and r.nota < 9:
+                r.notatxt = "Notable"
+            elseif r.nota > 9:
+                r.notatxt = "Sobresaliente"
+
+
 class fcties_empresa(models.Model):
     _name = 'fcties.empresa'
     _description = 'Empresa'
@@ -28,10 +39,10 @@ class fcties_empresa(models.Model):
     direccion = fields.Char(string="Dirección completa", required=True)
     alumno = fields.One2many("fcties.alumno", "empresa",string = "Alumnos")
 
- @api.depends('fecha','curso')
- def _curso(self):
-     for r in self:
-         if len(str(r.fechai)) > 2:
-             r.curso = str(r.fecha) + "/" + str(r.fechai + 1)[2:]
-         else:
-             r.curso = str(r.fechai) + "/" +str(r.fechai + 1)
+     @api.depends('fecha','curso')
+     def _curso(self):
+         for r in self:
+             if len(str(r.fechai)) > 2:
+                 r.curso = str(r.fecha) + "/" + str(r.fechai + 1)[2:]
+             else:
+                 r.curso = str(r.fechai) + "/" +str(r.fechai + 1)
