@@ -22,10 +22,11 @@ class fctie_alumno(models.Model):
         for r.nota in self:
             if r.nota >= 5 and r.nota < 7:
                 r.notatxt = "Aprobado"
-            elseif r.nota >= 7 and r.nota < 9:
+            elif r.nota >= 7 and r.nota < 9:
                 r.notatxt = "Notable"
-            elseif r.nota > 9:
+            elif r.nota > 9:
                 r.notatxt = "Sobresaliente"
+        else: r.notatxt = "suspenso"
 
 
 class fcties_empresa(models.Model):

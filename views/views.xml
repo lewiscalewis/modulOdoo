@@ -1,96 +1,119 @@
 <odoo>
   <data>
-        <record model="ir.ui.view" id="lapeliculera.genero_tree">
-        <field name="name">lapeliculera.genero.tree</field>
-        <field name="model">lapeliculera.genero</field>
-        <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="comentario"/>
-        </tree>
-        </field>
-        </record>
+     <record model="ir.ui.view" id="fcties.alumno_tree">
+         <field name="name">fcties.alumno.tree</field>
+         <field name="model">fcties.alumno</field>
+         <field name="arch" type="xml">
+             <tree>
+                 <field name="name"/>
+                 <field name="apellidos"/>
+                 <field name="fechanac"/>
+                 <field name="curso"/>
+                 <field name="correo"/>
+                 <field name="telefono"/>
+                 <field name="ciclo"/>
+                 <field name="periodo"/>
+                 <field name="nota"/>
+                 <field name="notatxt"/>
+                 <field name="empresa"/>
+             </tree>
+         </field>
+     </record>
 
-        <record model="ir.ui.view" id="lapeliculera.genero_form">
-        <field name="name">lapeliculera.genero.form</field>
-        <field name="model">lapeliculera.genero</field>
-        <field name="arch" type="xml">
-        <form>
-          <group colspan="2" col="2">
-            <field name="name"/>
-            <field name="comentario"/>
-            <field name="pelicula">
-        #           Una vista dentro de la otra
+      <record model="ir.ui.view" id="fcties.alumno_form">
+          <field name="name">fcties.alumno.form</field>
+         <field name="model">fcties.alumno</field>
+          <field name="arch" type="xml">
+              <form>
+                  <group colspan="2" col="2">
+                      <field name="fechanac"/>
+                      <field name="fechai"/>
+                      <field name="curso"/>
+                      <field name="correo"/>
+                      <field name="telefono"/>
+                      <field name="ciclo"/>
+                      <field name="periodo"/>
+                      <field name="nota"/>
+                      <field name="notatxt"/>
+                      <field name="empresa"/>
+                  </group>
+              </form>
+          </field>
+      </record>
+
+      <record model="ir.ui.view" id="fcties.alumno_form">
+          <field name="name">fcties.empresa.tree</field>
+         <field name="model">fcties.empresa</field>
+          <field name="arch" type="xml">
               <tree>
-                <field name="name"/>
-                <field name="director"/>
-                <field name="duracion"/>
+                  <field name="name"/>
+                  <field name="nombrecontacto"/>
+                  <field name="apellidoscontacto"/>
+                  <field name="telefonocontacto"/>
+                  <field name="correo"/>
+                  <field name="direccion"/>
+                  <field name="alumno">
+                      <tree>
+                          <field name="name"/>
+                          <field name="apellidos"/>
+                          <field name="curso"/>
+                          <field name="periodo"/>
+                      </tree>
+                  </field>
               </tree>
-            </field>
-          </group>
-        </form>
-        </field>
-        </record>
+          </field>
+      </record>
 
-        <record model="ir.ui.view" id="lapeliculera.pelicula_tree">
-        <field name="name">lapeliculera.pelicula.tree</field>
-        <field name="model">lapeliculera.pelicula</field>
-        <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="director"/>
-          <field name="duracion"/>
-        </tree>
-        </field>
-        </record>
+      <record model="ir.ui.view" id="fcties.alumno_form">
+          <field name="name">fcties.empresa.form</field>
+         <field name="model">fcties.empresa</field>
+          <field name="arch" type="xml">
+              <form>
+                  <group colspan="2" col="2">
+                        <field name="name"/>
+                        <field name="nombrecontacto"/>
+                        <field name="apellidoscontacto"/>
+                        <field name="telefonocontacto"/>
+                        <field name="correo"/>
+                        <field name="direccion"/>
+                        <field name="alumno">
+                            <tree>
+                                <field name="name"/>
+                                <field name="apellidos"/>
+                                <field name="curso"/>
+                                <field name="periodo"/>
+                            </tree>
+                        </field>
+                  </group>
+              </form>
+          </field>
+      </record>
 
-        <record model="ir.ui.view" id="lapeliculera.pelicula_form">
-        <field name="name">lapeliculera.pelicula.form</field>
-        <field name="model">lapeliculera.pelicula</field>
-        <field name="arch" type="xml">
-        <form>
-          <group colspan="2" col="2">
-            <field name="name"/>
-            <field name="director"/>
-            <field name="duracion"/>
-            <field name="industria"/>
-            <field name="fecha"/>
-            <field name="genero"/>
-          </group>
-        </form>
-        </field>
-        </record>
+      <record model="ir.action.act_window" id="fcties.alumno_action_window">
+          <field name="name">Alumnos</field>
+          <field name="res_model">fcties.alumno</field>
+          <field name="view_mode">tree,form</field>
+      </record>
 
-        <record model="ir.actions.act_window" id="lapeliculera.genero_action_window">
-        <field name="name">lapeliculera.genero.action_window</field>
-        <field name="res_model">lapeliculera.genero</field>
-        <field name="view_mode">tree,form</field>
-        </record>
+      <record model="ir.action.act_window" id="fcties.empresa_action_window">
+          <field name="name">Empresas</field>
+          <field name="res_model">fcties.empresa</field>
+          <field name="view_mode">tree,form</field>
+      </record>
 
-        <record model="ir.actions.act_window" id="lapeliculera.pelicula_action_window">
-        <field name="name">lapeliculera.pelicula.action_window</field>
-        <field name="res_model">lapeliculera.pelicula</field>
-        <field name="view_mode">tree,form</field>
-        </record>
-
-        <record model="ir.ui.view" id="fcties.alumno_search_view">
-            <field name="name">fcties.alumno.search</field>
-            <field name="model">fcties.alumno</field>
-            <field name="arch" type="xml">
-                <search>
-                    <filter name="Nota media superior a 8" domain="[('nota','&gt;',8)]"></filter>
-                    <field name="apellidos"></field>
-                    <field name="empresa"></field>
-                    <field name="periodo"></field>
-                    <field name="fechai"></field>
-                </search>
-            </field>
-        </record>
-
-    <menuitem name="LaPeliculera" id="lapeliculera.menu_root"/>
-    <menuitem name="Película" id="lapeliculera.pelicula_menu" parent="lapeliculera.menu_root" action="lapeliculera.pelicula_action_window"/>
-    <menuitem name="Género" id="lapeliculera.genero_menu" parent="lapeliculera.menu_root" action="lapeliculera.genero_action_window"/>
-
+      <record model="ir.ui.view" id="fcties.alumno_search_view">
+          <field name="name">fcties.alumno.search</field>
+          <field name="model">fcties.alumno</field>
+          <field name="arch" type="xml">
+              <search>
+                  <filter name="Nota media superior a 6" domain="[('nota','&gt;',8)]"></filter>
+                  <field name="apellidos"/>
+                  <field name="empresa"/>
+                  <field name="periodo"/>
+                  <field name="fechai"/>
+              </search>
+          </field>
+      </record>
 
   </data>
 </odoo>
