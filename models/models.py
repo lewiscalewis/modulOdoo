@@ -8,7 +8,7 @@ class fctie_alumno(models.Model):
     name = fields.Char(string="Nombre", required=True, help="Introduce el nombre del alumno")
     apellidos = fields.Char(string="Apellidos", required=True, help="Introduce el apellido del alumno")
     fechanac = fields.Date(string="Fecha de nacimiento", required =  True)
-    fechai = fields.Integer(string="Año inicial del curso académico", compute = "_curso", required = True)
+    fechai = fields.Integer(string="Año inicial del curso académico", required = True)
     curso = fields.Char(string = "Curso académico", compute = "_curso", required = True)
     correo = fields.Char(string = "correo electrónico")
     telefono = fields.Integer(string = "Teléfono")
