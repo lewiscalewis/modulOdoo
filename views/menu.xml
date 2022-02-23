@@ -1,5 +1,0 @@
-<openerp>
-    <data>
-        <menuitem name="Your Menu Name" id="your_menu_id" sequence="450"/>
-    </data>
-</openerp>

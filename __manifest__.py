@@ -26,7 +26,6 @@
         'security/security.xml',
         'security/ir.model.access.csv',
         'views/views.xml',
-        'views/menu.xml',
         'views/templates.xml',
         'reports/informe_pelicula.xml'
     ],
