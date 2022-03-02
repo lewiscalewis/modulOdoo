@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Aquí configuramos los permisos tal y como le aparecerán al usuario -->
 <odoo>
-    <record id="lapeliculera_jefe" model="res.groups">
-      <field name="name">Lapeliculera / Jefe</field>
+    <record id="fcties_coordinador" model="res.groups">
+      <field name="name">Coordinador</field>
     </record>
-    <record id="lapeliculera_becario" model="res.groups">
-      <field name="name">Lapeliculera / Becario</field>
+    <record id="fcties_profesor" model="res.groups">
+      <field name="name">Profesor</field>
     </record>
 </odoo>

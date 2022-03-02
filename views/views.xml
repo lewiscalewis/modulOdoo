@@ -1,119 +1,122 @@
 <odoo>
   <data>
-     <record model="ir.ui.view" id="fcties.alumno_tree">
-         <field name="name">fcties.alumno.tree</field>
-         <field name="model">fcties.alumno</field>
-         <field name="arch" type="xml">
-             <tree>
-                 <field name="name"/>
-                 <field name="apellidos"/>
-                 <field name="fechanac"/>
-                 <field name="curso"/>
-                 <field name="correo"/>
-                 <field name="telefono"/>
-                 <field name="ciclo"/>
-                 <field name="periodo"/>
-                 <field name="nota"/>
-                 <field name="notatxt"/>
-                 <field name="empresa"/>
-             </tree>
-         </field>
-     </record>
-
-      <record model="ir.ui.view" id="fcties.alumno_form">
-          <field name="name">fcties.alumno.form</field>
-         <field name="model">fcties.alumno</field>
-          <field name="arch" type="xml">
-              <form>
-                  <group colspan="2" col="2">
-                      <field name="fechanac"/>
-                      <field name="fechai"/>
-                      <field name="curso"/>
-                      <field name="correo"/>
-                      <field name="telefono"/>
-                      <field name="ciclo"/>
-                      <field name="periodo"/>
-                      <field name="nota"/>
-                      <field name="notatxt"/>
-                      <field name="empresa"/>
-                  </group>
-              </form>
-          </field>
-      </record>
-
-      <record model="ir.ui.view" id="fcties.alumno_form">
-          <field name="name">fcties.empresa.tree</field>
-         <field name="model">fcties.empresa</field>
-          <field name="arch" type="xml">
-              <tree>
-                  <field name="name"/>
-                  <field name="nombrecontacto"/>
-                  <field name="apellidoscontacto"/>
-                  <field name="telefonocontacto"/>
-                  <field name="correo"/>
-                  <field name="direccion"/>
-                  <field name="alumno">
-                      <tree>
-                          <field name="name"/>
-                          <field name="apellidos"/>
-                          <field name="curso"/>
-                          <field name="periodo"/>
-                      </tree>
-                  </field>
-              </tree>
-          </field>
-      </record>
-
-      <record model="ir.ui.view" id="fcties.alumno_form">
-          <field name="name">fcties.empresa.form</field>
-         <field name="model">fcties.empresa</field>
-          <field name="arch" type="xml">
-              <form>
-                  <group colspan="2" col="2">
+<!-- árbol de alumno -->
+    <record model="ir.ui.view" id="fcties.alumno_tree">
+      <field name="name">fcties.alumno.tree</field>
+      <field name="model">fcties.alumno</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="apellidos"/>
+          <field name="fechanac"/>
+          <field name="curso"/>
+          <field name="correo"/>
+          <field name="telefono"/>
+          <field name="ciclo"/>
+          <field name="periodo"/>
+          <field name="nota"/>
+          <field name="notatxt"/>
+          <field name="empresa"/>
+        </tree>
+      </field>
+    </record>
+<!-- formulario de alumno -->
+    <record model="ir.ui.view" id="fcties.alumno_form">
+      <field name="name">fcties.alumno.form</field>
+      <field name="model">fcties.alumno</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+              <field name="name"/>
+              <field name="apellidos"/>
+              <field name="fechanac"/>
+              <field name="fechai"/>
+              <field name="curso"/>
+              <field name="correo"/>
+              <field name="telefono"/>
+              <field name="ciclo"/>
+              <field name="periodo"/>
+              <field name="nota"/>
+              <field name="nota"/>
+              <field name="notatxt"/>
+              <field name="empresa"/>
+          </group>
+        </form>
+      </field>
+    </record>
+<!-- árbol de empresa -->
+    <record model="ir.ui.view" id="fcties.empresa_tree">
+      <field name="name">fcties.empresa.tree</field>
+      <field name="model">fcties.empresa</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="nombrecontacto"/>
+            <field name="apellidoscontacto"/>
+            <field name="telefonocontacto"/>
+            <field name="correo"/>
+            <field name="direccion"/>
+        </tree>
+      </field>
+    </record>
+      <!-- árbol de empresa -->
+    <record model="ir.ui.view" id="fcties.empresa_form">
+      <field name="name">fcties.empresa.form</field>
+      <field name="model">fcties.empresa</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+              <field name="name"/>
+              <field name="nombrecontacto"/>
+              <field name="apellidoscontacto"/>
+              <field name="telefonocontacto"/>
+              <field name="correo"/>
+              <field name="direccion"/>
+                <field name="alumno">
+                    <tree>
                         <field name="name"/>
-                        <field name="nombrecontacto"/>
-                        <field name="apellidoscontacto"/>
-                        <field name="telefonocontacto"/>
-                        <field name="correo"/>
-                        <field name="direccion"/>
-                        <field name="alumno">
-                            <tree>
-                                <field name="name"/>
-                                <field name="apellidos"/>
-                                <field name="curso"/>
-                                <field name="periodo"/>
-                            </tree>
-                        </field>
-                  </group>
-              </form>
-          </field>
-      </record>
+                        <field name="apellidos"/>
+                        <field name="curso"/>
+                        <field name="periodo"/>
+                    </tree>
+                </field>
+          </group>
+        </form>
+      </field>
+    </record>
 
-      <record model="ir.action.act_window" id="fcties.alumno_action_window">
-          <field name="name">Alumnos</field>
-          <field name="res_model">fcties.alumno</field>
-          <field name="view_mode">tree,form</field>
-      </record>
 
-      <record model="ir.action.act_window" id="fcties.empresa_action_window">
-          <field name="name">Empresas</field>
-          <field name="res_model">fcties.empresa</field>
-          <field name="view_mode">tree,form</field>
-      </record>
+    <record model="ir.actions.act_window" id="fcties.alumno_action_window">
+      <field name="name">Alumnos</field>
+      <field name="res_model">fcties.alumno</field>
+      <field name="view_mode">tree,form</field>
+    </record>
 
-      <record model="ir.ui.view" id="fcties.alumno_search_view">
-          <field name="name">fcties.alumno.search</field>
-          <field name="model">fcties.alumno</field>
-          <field name="arch" type="xml">
-              <search>
-                  <filter name="Nota media superior a 6" domain="[('nota','&gt;',8)]"></filter>
-                  <field name="apellidos"/>
-                  <field name="empresa"/>
-                  <field name="periodo"/>
-                  <field name="fechai"/>
-              </search>
-          </field>
-      </record>
+    <record model="ir.actions.act_window" id="fcties.empresa_action_window">
+      <field name="name">Empresa</field>
+      <field name="res_model">fcties.empresa</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+      <!-- filtro -->
+    <record model="ir.ui.view" id="fcties.alumno_search_view">
+      <field name="name">fcties.alumno.search</field>
+      <field name="model">fcties.alumno</field>
+      <field name="arch" type="xml">
+          <search>
+              <filter name="Nota media superior a 6" domain="[('nota','&gt;',8)]"></filter>
+              <field name="apellidos"/>
+              <field name="empresa"/>
+              <field name="periodo"/>
+              <field name="fechai"/>
+          </search>
+      </field>
+    </record>
+
+    <menuitem name="fcties" id="fcties.menu_root"/>
+    <menuitem name="Alumno" id="fcties.alumno_menu" parent="fcties.menu_root" action="fcties.alumno_action_window"/>
+    <menuitem name="Empresa" id="fcties.empresa_menu" parent="fcties.menu_root" action="fcties.empresa_action_window"/>
+
 
   </data>
 </odoo>

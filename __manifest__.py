@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "FCT Manager",
+    'name': "fcties",
 
     'summary': """
-        Gestión fct""",
+        Modulo de la práctica final""",
 
     'description': """
-        Módulo para la organización de la integración del alumnado en las empresas
+        Modulo de la practica final realizado por David Pérez Contreras
     """,
 
-    'author': "levi",
-    'website': "http://www.iesmurgi.org/",
+    'author': "Levi Vicente Navarro",
+    'website': "http://www.iesmurgi.org",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/13.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -26,8 +26,7 @@
         'security/security.xml',
         'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
-        'reports/informe_pelicula.xml'
+        'views/templates.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
