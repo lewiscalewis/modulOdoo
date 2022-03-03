@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="fcties.informe_empresa"
+            string="Informe sobre empresa"
+            model="fcties.empresa"
+            report_type="qweb-pdf"
+            name="fcties.informe_empresa_view"
+            file="fcties.informe_empresa_view"
+    />
+
+    <template id="informe_empresa_view">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="empresa">
+                <div class="page">
+                    <h1 t-field="empresa.name"/>
+                    <div>
+                        <strong>Contacto: </strong>
+                        <span t-field="empresa.nombrecontacto"/> <span t-field="empresa.apellidoscontacto"/>
+                    </div>
+                    <div>
+                        <strong>Teléfono: </strong>
+                        <span t-field="empresa.telefonocontacto"/>
+                    </div>
+                    <div>
+                        <strong>Email: </strong>
+                        <span t-field="empresa.correo"/>
+                    </div>
+                    <div>
+                        <strong>Dirección: </strong>
+                        <span t-field="empresa.direccion"/>
+                    </div>
+                    <h4>Alumnos: </h4>
+                    <t t-set="curso" t-value="[]"/>
+                    <t t-foreach="empresa.alumno.sorted(key=lambda r: r.fechai)" t-as="alumno">
+                        <t t-set="curso" t-value="curso+[alumno.curso]"/>
+                    </t>
+                    <t t-foreach="set(curso)" t-as="curso">
+                        <table style="width:100%;margin-bottom: 20px;margin-top: 10px">
+                            <h5>Curso Académico: <span t-esc="curso"/></h5>
+                            <thead>
+                                <tr>
+                                    <th><strong>Nombre</strong></th>
+                                    <th><strong>Apellidos</strong></th>
+                                    <th><strong>Teléfonos</strong></th>
+                                    <th><strong>Ciclo</strong></th>
+                                    <th><strong>Periodo de Prácticas</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="empresa.alumno" t-as="alumno">
+                                    <t t-if="curso==alumno.curso" t-as="alumno">
+                                        <tr>
+                                            <td class="text-left"><span t-field="alumno.name"/></td>
+                                            <td class="text-left"><span t-field="alumno.apellidos"/></td>
+                                            <td class="text-left"><span t-field="alumno.telefono"/></td>
+                                            <td class="text-left"><span t-field="alumno.ciclo"/></td>
+                                            <td class="text-left"><span t-field="alumno.periodo"/></td>
+                                        </tr>
+                                    </t>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

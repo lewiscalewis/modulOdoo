@@ -6,7 +6,7 @@
         Modulo de la práctica final""",
 
     'description': """
-        Modulo de la practica final realizado por David Pérez Contreras
+        Módulo by Leví :P
     """,
 
     'author': "Levi Vicente Navarro",
@@ -26,7 +26,8 @@
         'security/security.xml',
         'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml'
+        'views/templates.xml',
+        'reports/informe.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
